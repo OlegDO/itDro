@@ -1,0 +1,31 @@
+.carousel-control-next-icon{
+  height: 30px;
+  width: 30px;
+}
+.carousel-control-prev-icon{
+  height: 30px;
+  width: 30px;
+}
+
+.form-control-borderless {
+  border: none;
+}
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+.search-box{
+  border-radius: 45px;
+}
+
+.btn .btn-lg .btn-warning {
+  width: 120px;
+  height: 100px;
+}
+.slider-text {
+  background-color: #f4b942;
+  border-radius: 40px;
+  opacity: 0.9;
+  padding: 10px 13px;
+}
