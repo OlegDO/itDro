@@ -11,6 +11,12 @@ import { AboutComponent } from './components/about/about.component';
 import { Lesson1Component } from './components/course/lesson1/lesson1.component';
 import { RulesComponent } from './components/reviews/rules/rules.component';
 
+import {environment} from '../environments/environment';
+import {AngularFireAuthModule} from 'angularfire2/auth';
+import {AngularFireModule} from 'angularfire2';
+import {AngularFirestoreModule} from 'angularfire2/firestore';
+import {ReactiveFormsModule} from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +31,11 @@ import { RulesComponent } from './components/reviews/rules/rules.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase, 'itDro'),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
