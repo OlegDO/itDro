@@ -35,6 +35,6 @@
 .card-header {
   height: 80px;
 }
-p {
+p .lead {
   text-align: justify;
 }

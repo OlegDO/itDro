@@ -8,23 +8,74 @@
     <video src="">Видеоурок 1</video>
   </div>
   <!--tasks-->
-  <div class="container tasks d-flex flex-column align-content-center align-items-center">
-    <div class="card-deck mr-md-5 ml-md-5 mb-md-0 mt-md-0 p-md-3">
-      <!--card element 1-->
-      <div class="card mb-4 shadow-sm">
-        <div class="card-header text-center">
-          <h4 class="my-0 font-weight-normal">Задания:</h4>
+
+  <div class="container tasks d-flex flex-column align-content-center align-items-center  pt-md-5 pb-md-4">
+    <div id="accordion" class="w-100">
+
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              Определение JavaScript.
+            </button>
+          </h5>
         </div>
-        <div class="card-body">
-          <ul class="list-group-item list-unstyled list-group-item-warning px-md-2 my-md-2 text-center">
-            <li>1. Что такое JavaScript?</li>
-            <li>2. Типизированный ли это язык?</li>
-            <li>3. Назовите последнюю спецификацию.</li>
-          </ul>
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+            JavaScript - это мультипарадигменный язык программирования.
+          </div>
         </div>
       </div>
+
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Какие стили поддерживает JavaScript?
+            </button>
+          </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+          <div class="card-body">
+            JavaScript поддерживает объектно-ориентированный, императивный и функциональный стили.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Какие основные архитектурные черты содержит JavaScript?
+            </button>
+          </h5>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+          <div class="card-body">
+            Динамическая типизация, слабая типизация, автоматическое управление памятью, прототипное программирование
+            и т.д.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="headingFour">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              JavaScript улучшенная версия Java?
+            </button>
+          </h5>
+        </div>
+        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+          <div class="card-body">
+            Нет!
+          </div>
+      </div>
+      </div>
     </div>
-  </div>
+
+
+
   <!--comments-->
   <div class="container d-flex flex-column">
     <!--make a form here-->
