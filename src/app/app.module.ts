@@ -16,6 +16,8 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
 import {ReactiveFormsModule} from '@angular/forms';
+import { Lesson2Component } from './components/course/lesson2/lesson2.component';
+import { Lesson3Component } from './components/course/lesson3/lesson3.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import {ReactiveFormsModule} from '@angular/forms';
     ReviewsComponent,
     AboutComponent,
     Lesson1Component,
-    RulesComponent
+    RulesComponent,
+    Lesson2Component,
+    Lesson3Component
   ],
   imports: [
     BrowserModule,
