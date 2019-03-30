@@ -29,3 +29,12 @@
   opacity: 0.9;
   padding: 10px 13px;
 }
+.card {
+  width: 450px;
+}
+.card-header {
+  height: 80px;
+}
+p {
+  text-align: justify;
+}
