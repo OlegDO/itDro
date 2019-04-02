@@ -7,3 +7,11 @@
   padding: 3px 5px;
   display: block;
 }
+li {
+  margin-bottom: 5px;
+}
+.progress, .progress-bar {
+  height: 23px;
+  border-radius: 40px;
+  font-size: 18px;
+}

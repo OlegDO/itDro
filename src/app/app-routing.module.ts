@@ -9,6 +9,9 @@ import {Lesson1Component} from './components/course/lesson1/lesson1.component';
 import {RulesComponent} from './components/reviews/rules/rules.component';
 import {Lesson2Component} from './components/course/lesson2/lesson2.component';
 import {Lesson3Component} from './components/course/lesson3/lesson3.component';
+import {Lesson5Component} from './components/course/lesson5/lesson5.component';
+import {Lesson4Component} from './components/course/lesson4/lesson4.component';
+import {Lesson6Component} from './components/course/lesson6/lesson6.component';
 
 
 const routes: Routes = [
@@ -20,7 +23,10 @@ const routes: Routes = [
   {path: 'reviews/rules', component:RulesComponent},
   {path: 'course/lesson1' , component: Lesson1Component},
   {path: 'course/lesson2', component: Lesson2Component},
-  {path: 'course/lesson3', component: Lesson3Component}
+  {path: 'course/lesson3', component: Lesson3Component},
+  {path: 'course/lesson4', component: Lesson4Component},
+  {path: 'course/lesson5', component: Lesson5Component},
+  {path: 'course/lesson6', component: Lesson6Component}
 ];
 
 @NgModule({
