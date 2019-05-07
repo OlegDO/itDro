@@ -7,7 +7,7 @@ import {AngularFirestore, AngularFirestoreCollection} from 'angularfire2/firesto
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'itDro';
   itemsCollection: AngularFirestoreCollection<any>;
 
@@ -19,4 +19,5 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     this.itemsCollection.valueChanges().subscribe(data => console.log(data));
   }
+
 }

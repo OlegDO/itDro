@@ -1,35 +1,20 @@
-<!--container of searching-->
-<div class="container-fluid d-flex flex-column align-items-center p-5 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+<!--Search Router-->
+<div class="container-fluid d-flex flex-column align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
   <div class="container">
-    <div class="search-box card card-sm">
-      <div class="card-body row no-gutters align-items-center" style="height: 87px">
-        <div class="col-auto">
-          <i class="fas fa-search h4 text-body"></i>
-        </div>
-        <!--end of col-->
-        <div class="col">
-          <input class="form-control form-control-lg form-control-borderless" type="search"
-                 placeholder="Введите название темы">
-        </div>
-        <!--end of col-->
-        <div class="col-auto">
-          <button class="btn btn-lg btn-warning" style="border-radius: 45px; width: 110px" type="submit">Поиск
-          </button>
-        </div>
-        <!--end of col-->
-      </div>
+    <div class="col-auto">
+      <h2 class="text-center"><a routerLink="/search">Поиск</a></h2>
     </div>
   </div>
 </div>
 
 <h4 class="my-0 font-weight-normal p-3 text-center" style="font-size: 30px">JavaScript</h4>
 <div class="container-img-es6 d-flex justify-content-center">
-  <img src="../../../assets/images/js.png" alt="a">
+  <img src="../../../assets/images/js.png" alt="">
 </div>
 <!--topics-->
 <div class="container-fluid mt-md-5" style="">
   <div class="mx-md-auto my-md-auto align-content-center text-center font-weight-normal">
-    <h1 class="display-4">Содержание:</h1>
+    <h2 class="display-4">Содержание:</h2>
     <br>
   </div>
 
@@ -42,10 +27,9 @@
         <div class="card-header text-center">
           <h4 class="my-0 font-weight-normal">Введение</h4>
         </div>
-        <div class="card-body ">
+        <div class="card-body">
           <ul class="list-group-item list-unstyled list-group-item-warning px-md-2 my-md-2">
-            <li><a routerLink="/course/lesson1">1. Что такое JavaScript?</a></li>
-            <li><a routerLink="/course/lesson2">2. Инструменты разработки.</a></li>
+            <li *ngFor="let lesson of lessons; let i = index"><div *ngIf="lesson.type === 'intro'"><a [routerLink]="lesson.link">{{ i + 1 }} {{ lesson.title }}</a></div></li>
           </ul>
         </div>
       </div>
@@ -57,10 +41,7 @@
         </div>
         <div class="card-body ">
           <ul class="list-group-item list-group-item-warning list-unstyled px-md-2 my-md-2">
-            <li><a routerLink="/course/lesson3">3. Создание первой программы, скрипты.</a></li>
-            <li><a routerLink="/course/lesson4">4. Структура кода, современный стандарт.</a></li>
-            <li><a routerLink="/course/lesson5">5. Переменные и типы данных.</a></li>
-            <li><a routerLink="/course/lesson6">6. Операторы сравнения, условные и логические.</a></li>
+            <li *ngFor="let lesson of lessons; let i = index"><div *ngIf="lesson.type === 'core'"><a [routerLink]="lesson.link">{{ i + 1 }} {{ lesson.title }}</a></div></li>
           </ul>
         </div>
       </div>

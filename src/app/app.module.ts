@@ -15,12 +15,14 @@ import {environment} from '../environments/environment';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { Lesson2Component } from './components/course/lesson2/lesson2.component';
 import { Lesson3Component } from './components/course/lesson3/lesson3.component';
 import { Lesson4Component } from './components/course/lesson4/lesson4.component';
 import { Lesson5Component } from './components/course/lesson5/lesson5.component';
 import { Lesson6Component } from './components/course/lesson6/lesson6.component';
+import { SearchComponent } from './components/search/search.component';
+import {LessonFilterPipe} from './pipes/lessonFilter.pipe';
 
 
 @NgModule({
@@ -37,7 +39,10 @@ import { Lesson6Component } from './components/course/lesson6/lesson6.component'
     Lesson3Component,
     Lesson4Component,
     Lesson5Component,
-    Lesson6Component
+    Lesson6Component,
+    SearchComponent,
+    LessonFilterPipe
+
   ],
   imports: [
     BrowserModule,
@@ -45,7 +50,8 @@ import { Lesson6Component } from './components/course/lesson6/lesson6.component'
     AngularFireModule.initializeApp(environment.firebase, 'itDro'),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
