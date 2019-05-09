@@ -8,11 +8,22 @@
     <a class="p-2 text-dark form-control-lg" routerLink="/reviews">Отзывы</a>
     <a class="p-2 text-dark form-control-lg" routerLink="/about">О нас</a>
   </div>
-  <a class="btn btn-outline-primary btn-lg btn-auth">Авторизация</a>
+  <div class="dropdown show">
+    <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="auth">
+        Пользователь
+      </span>
+    </a>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <a class="dropdown-item" href="#">
+        <span class="auth">
+          Авторизация
+          </span>
+      </a>
+    </div>
+  </div>
 </div>
-<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-white border-bottom shadow-sm">
 
-</div>
 
 <!--components-->
 <router-outlet></router-outlet>

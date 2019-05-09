@@ -4,3 +4,11 @@
 .btn-auth {
   border-radius: 45px
 }
+.user-container {
+  background-color: #f4b942;
+  width: 10%;
+}
+.auth {
+  font-size: 1.2em;
+}
+
