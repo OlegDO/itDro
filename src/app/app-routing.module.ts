@@ -13,6 +13,7 @@ import {Lesson5Component} from './components/course/lesson5/lesson5.component';
 import {Lesson4Component} from './components/course/lesson4/lesson4.component';
 import {Lesson6Component} from './components/course/lesson6/lesson6.component';
 import {SearchComponent} from './components/search/search.component';
+import {UserComponent} from './components/user/user.component';
 
 
 
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path: 'about', component: AboutComponent},
   {path: 'search', component: SearchComponent},
   {path: 'reviews', component: ReviewsComponent},
+  {path: 'user', component: UserComponent},
   {path: 'reviews/rules', component: RulesComponent},
   {path: 'course/lesson1' , component: Lesson1Component},
   {path: 'course/lesson2', component: Lesson2Component},

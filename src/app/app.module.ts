@@ -23,6 +23,11 @@ import { Lesson5Component } from './components/course/lesson5/lesson5.component'
 import { Lesson6Component } from './components/course/lesson6/lesson6.component';
 import { SearchComponent } from './components/search/search.component';
 import {LessonFilterPipe} from './pipes/lessonFilter.pipe';
+import {AuthService} from './shared/service/auth.service';
+import { UserComponent } from './components/user/user.component';
+import {AngularFirestore} from '@angular/fire/firestore';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 
 
@@ -44,6 +49,7 @@ import {LessonFilterPipe} from './pipes/lessonFilter.pipe';
     Lesson6Component,
     SearchComponent,
     LessonFilterPipe,
+    UserComponent,
 
 
   ],
@@ -53,10 +59,11 @@ import {LessonFilterPipe} from './pipes/lessonFilter.pipe';
     AngularFireModule.initializeApp(environment.firebase, 'itDro'),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    AppRoutingModule,
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
