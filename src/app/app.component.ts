@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {AngularFirestore, AngularFirestoreCollection} from 'angularfire2/firestore';
+import {AngularFireAuth} from '@angular/fire/auth';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,16 +11,16 @@ import {AngularFirestore, AngularFirestoreCollection} from 'angularfire2/firesto
 })
 
 export class AppComponent implements OnInit {
-  title = 'itDro';
-  itemsCollection: AngularFirestoreCollection<any>;
+  // itemsCollection: AngularFirestoreCollection<any>;
+  //
+  // constructor(private db: AngularFirestore) {
+  //   this.itemsCollection = this.db.collection('test');
+  // }
 
-  constructor(private db: AngularFirestore) {
-    this.itemsCollection = this.db.collection('test');
-  }
 
+  ngOnInit() {
 
-  ngOnInit(): void {
-    this.itemsCollection.valueChanges().subscribe(data => console.log(data));
+    // this.itemsCollection.valueChanges().subscribe(data => console.log(data));
   }
 
 }

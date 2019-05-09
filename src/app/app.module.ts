@@ -25,6 +25,8 @@ import { SearchComponent } from './components/search/search.component';
 import {LessonFilterPipe} from './pipes/lessonFilter.pipe';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +43,8 @@ import {LessonFilterPipe} from './pipes/lessonFilter.pipe';
     Lesson5Component,
     Lesson6Component,
     SearchComponent,
-    LessonFilterPipe
+    LessonFilterPipe,
+
 
   ],
   imports: [

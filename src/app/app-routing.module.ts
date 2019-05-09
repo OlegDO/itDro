@@ -15,6 +15,8 @@ import {Lesson6Component} from './components/course/lesson6/lesson6.component';
 import {SearchComponent} from './components/search/search.component';
 
 
+
+
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'support', component: SupportComponent},
