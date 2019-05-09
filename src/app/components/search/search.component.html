@@ -1,0 +1,31 @@
+<!--container of searching-->
+<div class="container-fluid d-flex flex-column align-items-center p-5 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <div class="container">
+    <div class="search-box card card-sm">
+      <div class="card-body row no-gutters align-items-center" style="height: 87px">
+        <div class="col-auto">
+          <i class="fas fa-search h4 text-body"></i>
+        </div>
+        <!--end of col-->
+        <div class="col">
+          <input class="form-control form-control-lg form-control-borderless"
+                 type="search"
+                 placeholder="Введите название темы"
+                 [(ngModel)]="searchLesson"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--LessonsList-->
+<div class="container">
+    <ul class="list-group">
+      <li class="list-group-item"
+      *ngFor="let lesson of lessons | lessonFilter:searchLesson; let i = index"
+      >
+        <a [routerLink]="lesson.link">{{ i + 1 }} {{ lesson.title }}</a>
+      </li>
+    </ul>
+</div>
