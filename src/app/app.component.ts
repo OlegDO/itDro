@@ -28,7 +28,6 @@ export class AppComponent {
   }
 
   login() {
-    console.log(this.user)
     this.authenticated = true;
     this.isWaiting = true;
     this.afAuth.loginInWithGoogle().then(() => {

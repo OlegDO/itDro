@@ -2,14 +2,14 @@
 <div class="container-fluid d-flex flex-column align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
   <div class="container">
     <div class="col-auto">
-      <h2 class="text-center"><a routerLink="/search">Поиск</a></h2>
+      <h2 class="text-center"><a class="text-primary" routerLink="/search">Поиск</a></h2>
     </div>
   </div>
 </div>
 
 <h4 class="my-0 font-weight-normal p-3 text-center" style="font-size: 30px">JavaScript</h4>
 <div class="container-img-es6 d-flex justify-content-center">
-  <img src="../../../assets/images/js.png" alt="">
+  <!--<img src="../../../assets/images/js.png" alt="">-->
 </div>
 <!--topics-->
 <div class="container-fluid mt-md-5" style="">
@@ -28,7 +28,7 @@
           <h4 class="my-0 font-weight-normal">Введение</h4>
         </div>
         <div class="card-body">
-          <ul class="list-group-item list-unstyled list-group-item-warning px-md-2 my-md-2">
+          <ul class="list-group-item list-unstyled list-group-item-primary px-md-2 my-md-2">
             <li *ngFor="let lesson of lessons; let i = index"><div *ngIf="lesson.type === 'intro'"><a [routerLink]="lesson.link">{{ i + 1 }} {{ lesson.title }}</a></div></li>
           </ul>
         </div>
@@ -40,7 +40,7 @@
           <h4 class="my-0 font-weight-normal">Основы языка</h4>
         </div>
         <div class="card-body ">
-          <ul class="list-group-item list-group-item-warning list-unstyled px-md-2 my-md-2">
+          <ul class="list-group-item list-group-item-primary list-unstyled px-md-2 my-md-2">
             <li *ngFor="let lesson of lessons; let i = index"><div *ngIf="lesson.type === 'core'"><a [routerLink]="lesson.link">{{ i + 1 }} {{ lesson.title }}</a></div></li>
           </ul>
         </div>
@@ -52,7 +52,7 @@
           <h4 class="my-0 font-weight-normal">Структуры данных</h4>
         </div>
         <div class="card-body">
-          <ul class="list-group-item list-group-item-warning list-unstyled px-md-2 my-md-2">
+          <ul class="list-group-item list-group-item-primary list-unstyled px-md-2 my-md-2">
             <li><a routerLink="/">13. Поговорим о методах и свойствах.</a></li>
             <li><a routerLink="/">14. Строки.</a></li>
             <li><a routerLink="/">15. Числа.</a></li>

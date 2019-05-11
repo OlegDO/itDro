@@ -4,9 +4,9 @@
     <a class="p-2 text-dark" routerLink="/"><span class="title">itDro</span></a>
   </h5>
   <div class="my-0 my-md-0 mr-md-3">
-    <a class="p-2 text-dark form-control-lg" routerLink="/course">Видеокурсы</a>
-    <a class="p-2 text-dark form-control-lg" routerLink="/reviews">Отзывы</a>
-    <a class="p-2 text-dark form-control-lg" routerLink="/about">О нас</a>
+    <a class="p-2 form-control-lg route" routerLink="/course">Видеокурсы</a>
+    <a class="p-2 form-control-lg route" routerLink="/reviews">Отзывы</a>
+    <a class="p-2 form-control-lg route" routerLink="/about">О нас</a>
   </div>
   <div class="dropdown show">
     <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -26,7 +26,7 @@
         <span class="auth">Вход</span>
       </button>
       <!---->
-      <button class="dropdown-item"  routerLink="/user" *ngIf="authenticated">
+      <button class="dropdown-item"  routerLink="/profile" *ngIf="authenticated">
         <span class="auth">Профиль</span>
       </button>
       <button class="dropdown-item"  (click)="logOut()" *ngIf="authenticated">
