@@ -24,6 +24,7 @@ import { SearchComponent } from './components/search/search.component';
 import {LessonFilterPipe} from './pipes/lessonFilter.pipe';
 import {AuthService} from './shared/service/auth.service';
 import { ProfileComponent } from './components/profile/profile.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 
@@ -42,7 +43,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     Lesson6Component,
     SearchComponent,
     LessonFilterPipe,
-    ProfileComponent
+    ProfileComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
