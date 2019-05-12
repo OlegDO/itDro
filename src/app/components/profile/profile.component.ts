@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../shared/service/auth.service';
 import {AngularFireAuth} from 'angularfire2/auth';
+import {log} from 'util';
+import {Observable} from 'rxjs';
+import * as firebase from 'firebase/app';
 
 
 
@@ -11,12 +14,11 @@ import {AngularFireAuth} from 'angularfire2/auth';
 })
 export class ProfileComponent {
   user: any;
-  constructor(private a: AngularFireAuth) {
-    this.a.authState
-      .subscribe((authentic) => {
-        if (authentic != null) {
-          this.user = authentic;
-        }
-      });
+  user$: Observable<firebase.User>;
+  constructor(private afAuth: AuthService) {
+    this.user$ = this.afAuth.user;
+    this.user$.subscribe((u) => {
+      this.user = u;
+    });
   }
 }

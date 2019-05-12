@@ -25,6 +25,7 @@ import {LessonFilterPipe} from './pipes/lessonFilter.pipe';
 import {AuthService} from './shared/service/auth.service';
 import { ProfileComponent } from './components/profile/profile.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import {ProfileGuard} from './shared/service/profile.guard';
 
 
 
@@ -56,7 +57,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, ProfileGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

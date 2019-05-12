@@ -13,6 +13,7 @@ import {Lesson6Component} from './components/course/lesson6/lesson6.component';
 import {SearchComponent} from './components/search/search.component';
 import {ProfileComponent} from './components/profile/profile.component';
 import {NotFoundComponent} from './components/not-found/not-found.component';
+import {ProfileGuard} from './shared/service/profile.guard';
 
 
 
@@ -23,7 +24,7 @@ const routes: Routes = [
   {path: 'about', component: AboutComponent},
   {path: 'search', component: SearchComponent},
   {path: 'reviews', component: ReviewsComponent},
-  {path: 'profile', component: ProfileComponent},
+  {path: 'profile', component: ProfileComponent, canActivate: [ProfileGuard]},
   {path: 'course/lesson1' , component: Lesson1Component},
   {path: 'course/lesson2', component: Lesson2Component},
   {path: 'course/lesson3', component: Lesson3Component},

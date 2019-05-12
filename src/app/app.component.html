@@ -12,24 +12,24 @@
     <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
       <!--Authorization block-->
-      <span class="auth" *ngIf="authenticated">
+      <span class="auth" *ngIf="afAuth.isAuthenticated">
         <img class="user-photo" [src]="user.photoURL" alt="">{{ user.displayName }}
       </span>
-      <span class="auth" *ngIf="!authenticated">
+      <span class="auth" *ngIf="!afAuth.isAuthenticated">
         <img class="user-photo" src="../assets/images/anonymous.jpg" alt="">{{ default }}
       </span>
     </a>
 
     <!--Login/Logout block-->
     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-      <button class="dropdown-item"  (click)="login()" *ngIf="!authenticated">
+      <button class="dropdown-item"  (click)="login()" *ngIf="!afAuth.isAuthenticated">
         <span class="auth">Вход</span>
       </button>
       <!---->
-      <button class="dropdown-item"  routerLink="/profile" *ngIf="authenticated">
+      <button class="dropdown-item"  routerLink="/profile" *ngIf="afAuth.isAuthenticated">
         <span class="auth">Профиль</span>
       </button>
-      <button class="dropdown-item"  (click)="logOut()" *ngIf="authenticated">
+      <button class="dropdown-item"  (click)="logOut()" *ngIf="afAuth.isAuthenticated">
         <span class="auth">Выход</span>
       </button>
     </div>

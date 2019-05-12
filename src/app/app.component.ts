@@ -12,34 +12,33 @@ import {AuthService} from './shared/service/auth.service';
 export class AppComponent {
 
   user: any;
-  public authenticated = false;
   public isWaiting = false;
   default = 'Аноним';
 
-  constructor(private a: AngularFireAuth, private afAuth: AuthService) {
+  constructor(private a: AngularFireAuth, public afAuth: AuthService) {
     this.a.authState
       .subscribe((authentic) => {
         if (authentic != null) {
           this.user = authentic;
-          this.authenticated = true;
+          this.afAuth.isAuthenticated = true;
           window.localStorage.setItem('user', JSON.stringify(this.user));
         }
       });
   }
 
   login() {
-    this.authenticated = true;
     this.isWaiting = true;
     this.afAuth.loginInWithGoogle().then(() => {
+      this.afAuth.isAuthenticated = true;
       this.isWaiting = false;
     }).catch( () => {
-      this.authenticated = false;
+      this.afAuth.isAuthenticated = false;
     });
   }
 
   logOut() {
     this.afAuth.logout();
-    this.authenticated = false;
+    this.afAuth.isAuthenticated = false;
   }
 
 }
