@@ -1,5 +1,12 @@
-<div class="container">
-  <img class="user-photo" [src]=" user.photoURL" alt="">{{ user.displayName }}
+<div class="container d-flex flex-row pt-3">
+  <img class="user-photo" [src]=" user.photoURL" alt="">
+  <div class="user-info flex-column w-50 px-md-2">
+    <h3>Профиль:</h3>
+    <ul class="list-unstyled">
+      <li>{{ user.displayName }}</li>
+      <li>Почта: {{ user.email }}</li>
+    </ul>
+  </div>
 </div>
 
 

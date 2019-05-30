@@ -26,6 +26,7 @@ import {AuthService} from './shared/service/auth.service';
 import { ProfileComponent } from './components/profile/profile.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import {ProfileGuard} from './shared/service/profile.guard';
+import {VideoService} from './shared/service/video.service';
 
 
 
@@ -57,7 +58,7 @@ import {ProfileGuard} from './shared/service/profile.guard';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [AuthService, ProfileGuard],
+  providers: [AuthService, ProfileGuard, VideoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
