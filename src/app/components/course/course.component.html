@@ -29,7 +29,7 @@
         </div>
         <div class="card-body">
           <ul class="list-group-item list-unstyled list-group-item-primary px-md-2 my-md-2">
-            <li *ngFor="let lesson of lessons; let i = index"><div *ngIf="lesson.type === 'intro'"><a [routerLink]="lesson.link">{{ i + 1 }} {{ lesson.title }}</a></div></li>
+            <li *ngFor="let lesson of lessons; let i = index"><div *ngIf="lesson.type === 'intro'"><a [routerLink]="['/course', lesson.link]">{{ i + 1 }} {{ lesson.title }}</a></div></li>
           </ul>
         </div>
       </div>
@@ -41,7 +41,7 @@
         </div>
         <div class="card-body ">
           <ul class="list-group-item list-group-item-primary list-unstyled px-md-2 my-md-2">
-            <li *ngFor="let lesson of lessons; let i = index"><div *ngIf="lesson.type === 'core'"><a [routerLink]="lesson.link">{{ i + 1 }} {{ lesson.title }}</a></div></li>
+            <li *ngFor="let lesson of lessons; let i = index"><div *ngIf="lesson.type === 'core'"><a [routerLink]="['/course', lesson.link]">{{ i + 1 }} {{ lesson.title }}</a></div></li>
           </ul>
         </div>
       </div>

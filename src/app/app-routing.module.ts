@@ -14,6 +14,7 @@ import {SearchComponent} from './components/search/search.component';
 import {ProfileComponent} from './components/profile/profile.component';
 import {NotFoundComponent} from './components/not-found/not-found.component';
 import {ProfileGuard} from './shared/service/profile.guard';
+import {LessonComponent} from './components/course/lesson/lesson.component';
 
 
 
@@ -25,12 +26,12 @@ const routes: Routes = [
   {path: 'search', component: SearchComponent},
   {path: 'reviews', component: ReviewsComponent},
   {path: 'profile', component: ProfileComponent, canActivate: [ProfileGuard]},
-  {path: 'course/lesson1' , component: Lesson1Component},
-  {path: 'course/lesson2', component: Lesson2Component},
-  {path: 'course/lesson3', component: Lesson3Component},
-  {path: 'course/lesson4', component: Lesson4Component},
-  {path: 'course/lesson5', component: Lesson5Component},
-  {path: 'course/lesson6', component: Lesson6Component},
+  {path: 'course/:link' , component: LessonComponent},
+  // {path: 'course/lesson2', component: Lesson2Component},
+  // {path: 'course/lesson3', component: Lesson3Component},
+  // {path: 'course/lesson4', component: Lesson4Component},
+  // {path: 'course/lesson5', component: Lesson5Component},
+  // {path: 'course/lesson6', component: Lesson6Component},
   {path: 'not-found', component: NotFoundComponent},
   {path: '**', redirectTo: 'not-found'}
 ];

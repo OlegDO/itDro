@@ -27,6 +27,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import {ProfileGuard} from './shared/service/profile.guard';
 import {VideoService} from './shared/service/video.service';
+import { LessonComponent } from './components/course/lesson/lesson.component';
 
 
 
@@ -46,7 +47,8 @@ import {VideoService} from './shared/service/video.service';
     SearchComponent,
     LessonFilterPipe,
     ProfileComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LessonComponent
   ],
   imports: [
     BrowserModule,
