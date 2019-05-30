@@ -25,7 +25,7 @@
       <li class="list-group-item"
       *ngFor="let lesson of lessons | lessonFilter:searchLesson; let i = index"
       >
-        <a [routerLink]="lesson.link">{{ i + 1 }} {{ lesson.title }}</a>
+        <a [routerLink]="['/course', lesson.link]">{{ i + 1 }} {{ lesson.title }}</a>
       </li>
     </ul>
 </div>

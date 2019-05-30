@@ -7,7 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CourseComponent } from './components/course/course.component';
 import { ReviewsComponent } from './components/reviews/reviews.component';
 import { AboutComponent } from './components/about/about.component';
-import { Lesson1Component } from './components/course/lesson1/lesson1.component';
+
 
 
 import {environment} from '../environments/environment';
@@ -38,7 +38,6 @@ import { LessonComponent } from './components/course/lesson/lesson.component';
     CourseComponent,
     ReviewsComponent,
     AboutComponent,
-    Lesson1Component,
     Lesson2Component,
     Lesson3Component,
     Lesson4Component,
