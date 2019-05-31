@@ -12,12 +12,25 @@
   <div class="container d-flex flex-column">
     <!--make a form here-->
     <div>
-      <textarea class="w-100 p-3 lead" name="" id="" rows="4" placeholder="Ваш комментарий.."></textarea>
+      <textarea class="w-100 p-3 lead" id="generalComment" rows="2" placeholder="Ваш комментарий.." [(ngModel)]="userComment" [maxLength]="255" [minLength]="1"></textarea>
     </div>
-    <button class="submit btn btn-outline-primary btn-lg my-3" style="border-radius: 45px">Отправить</button>
+    <button (click)="getInfo();" class="submit btn btn-outline-primary btn-lg my-3" style="border-radius: 45px">Отправить</button>
     <div class="comments">
-      
-    </div>
+    <ul class="list-group">
+      <li class="list-group-item py-3 my-4"
+          *ngFor="let review of reviews;"
+      >
+        <div  class="row mx-auto">
+          <img  [src]="review.userPhoto" alt="" class="user-photo mr-3">
+          <h5 class="pt-2"><span>{{ review.userName }}</span></h5>
+        </div>
+        <hr>
+        <div class="mess">
+          <span class="lead">{{ review.comment }}</span>
+        </div>
+      </li>
+    </ul>
+  </div>
   </div>
 </div>
 
