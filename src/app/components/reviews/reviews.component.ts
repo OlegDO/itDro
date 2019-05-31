@@ -45,4 +45,9 @@ export class ReviewsComponent implements OnInit {
       console.log(this.user);
     });
   }
+
+  deleteReview(event, reviewItem) {
+    console.log(event);
+    // this.load();
+  }
 }

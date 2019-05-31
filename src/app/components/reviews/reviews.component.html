@@ -19,11 +19,15 @@
     <ul class="list-group">
       <li class="list-group-item py-3 my-4"
           *ngFor="let review of reviews;"
-      >
-        <div  class="row mx-auto">
+      ><div class="row">
+        <div  class="row mx-auto w-75 pl-3">
           <img  [src]="review.userPhoto" alt="" class="user-photo mr-3">
           <h5 class="pt-2"><span>{{ review.userName }}</span></h5>
         </div>
+        <div class="delete w-25">
+          <img (click)="deleteReview($event);" class="delete-icon" src="../../../assets/images/delete.png" alt="">
+        </div>
+      </div>
         <hr>
         <div class="mess">
           <span class="lead">{{ review.comment }}</span>

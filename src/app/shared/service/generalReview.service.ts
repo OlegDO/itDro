@@ -18,4 +18,8 @@ export class generalReviewService {
   getGeneralReview(data: any) {
     return this.db.collection('generalReview', (ref) => ref).valueChanges();
   }
+
+  removeReview(data: any) {
+    return this.db.doc('generalReview').delete();
+  }
 }

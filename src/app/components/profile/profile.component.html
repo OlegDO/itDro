@@ -1,10 +1,14 @@
+<!--post header section-->
+<div class="course-header bg-dark px-3 py-3 pt-md-5 pb-md-4 text-center w-100 mx-md-auto">
+  <h2 class="display-4 text-white">Профиль</h2>
+</div>
 <div class="container d-flex flex-row pt-3">
-  <img class="user-photo" [src]=" user.photoURL" alt="">
-  <div class="user-info flex-column w-50 px-md-2">
-    <h3>Профиль:</h3>
-    <ul class="list-unstyled">
+  <img class="user-photo mr-4" [src]=" user.photoURL" alt="">
+  <div class="user-info flex-column w-50 px-md-4 border-left border-dark">
+    <ul class="list-unstyled lead">
       <li>{{ user.displayName }}</li>
-      <li>Почта: {{ user.email }}</li>
+      <hr>
+      <li>Ваша почта: {{ user.email }}</li>
     </ul>
   </div>
 </div>
