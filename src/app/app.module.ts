@@ -24,6 +24,7 @@ import {ProfileGuard} from './shared/service/profile.guard';
 import {VideoService} from './shared/service/video.service';
 import { LessonComponent } from './components/course/lesson/lesson.component';
 import {ReviewService} from './shared/service/review.service';
+import {AdminService} from './shared/service/admin.service';
 
 
 
@@ -52,7 +53,7 @@ import {ReviewService} from './shared/service/review.service';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [AuthService, ProfileGuard, VideoService, ReviewService],
+  providers: [AuthService, ProfileGuard, VideoService, ReviewService, AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

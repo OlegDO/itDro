@@ -5,6 +5,10 @@ import {ReviewService} from '../../shared/service/review.service';
 import {NgForm} from '@angular/forms';
 import {__await} from 'tslib';
 import {NgClass} from '@angular/common';
+import {Admin} from '../../shared/models/admin';
+import {ADMINS} from '../../shared/constants/admins';
+import {AdminService} from '../../shared/service/admin.service';
+
 
 
 @Component({
@@ -18,10 +22,11 @@ export class ReviewsComponent implements OnInit {
   reviews: Review[];
   userComment: any;
   uid = JSON.parse(window.localStorage.getItem('user')).uid;
+  check: boolean;
 
-
-  constructor(private auth: AuthService, private reviewService: ReviewService) {  }
-
+  constructor(private auth: AuthService, private reviewService: ReviewService, private admin: AdminService) {
+    this.check = admin.isAdmin;
+  }
   ngOnInit() {
     this.load();
   }
@@ -32,13 +37,9 @@ export class ReviewsComponent implements OnInit {
     this.reviewService.getReview().subscribe((data) => (data));
   }
   private deleteReview(event, review: Review) {
-    console.log(event)
-    console.log(review)
-    // console.log(reviewService)
-    if (this.uid === review.userId) {
-     return this.reviewService.removeReview(review);
-      // reviewItem.remove();
-    }
+      if (this.uid === review.userId || this.check) {
+        return this.reviewService.removeReview(review);
+      }
     return this.load();
   }
   private load() {
