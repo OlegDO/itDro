@@ -4,22 +4,22 @@ import {AngularFirestore, AngularFirestoreCollection} from 'angularfire2/firesto
 @Injectable({
   providedIn: 'root'
 })
-export class generalReviewService {
+export class VideoService {
   generalReviewCollection: AngularFirestoreCollection<any>;
 
   constructor(private db: AngularFirestore) {
-    this.generalReviewCollection = this.db.collection('generalReview');
+    this.generalReviewCollection = this.db.collection('videoReview');
   }
 
-  postGeneralReview(data: any) {
+  postVideoReview(data: any) {
     return this.generalReviewCollection.add(data);
   }
 
-  getGeneralReview(data: any) {
+  getVideoReview(data: any) {
     return this.db.collection('generalReview', (ref) => ref).valueChanges();
   }
 
-  removeReview(data: any) {
-    return this.db.doc('generalReview').delete();
-  }
+  // removeReview(data: any) {
+  //   return this.db.doc('generalReview').delete();
+  // }
 }

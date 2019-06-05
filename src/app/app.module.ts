@@ -23,6 +23,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import {ProfileGuard} from './shared/service/profile.guard';
 import {VideoService} from './shared/service/video.service';
 import { LessonComponent } from './components/course/lesson/lesson.component';
+import {ReviewService} from './shared/service/review.service';
+
 
 
 
@@ -49,7 +51,7 @@ import { LessonComponent } from './components/course/lesson/lesson.component';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [AuthService, ProfileGuard, VideoService],
+  providers: [AuthService, ProfileGuard, VideoService, ReviewService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

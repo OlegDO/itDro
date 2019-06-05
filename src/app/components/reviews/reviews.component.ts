@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../shared/service/auth.service';
-import {generalReviewService} from '../../shared/service/generalReview.service';
+import {Review} from '../../shared/models/review';
+import {ReviewService} from '../../shared/service/review.service';
+
 
 @Component({
   selector: 'app-reviews',
@@ -8,46 +10,17 @@ import {generalReviewService} from '../../shared/service/generalReview.service';
   styleUrls: ['./reviews.component.css']
 })
 export class ReviewsComponent implements OnInit {
-  user: any = {};
-  reviews: any = {};
-  userComment: string;
-  link = '/reviews';
+  public idUser: string;
+  public reviews: Review[];
 
-  constructor(private auth: AuthService, private gReview: generalReviewService) { }
+  constructor(private auth: AuthService, private reviewService: ReviewService) {
+    this.idUser = JSON.parse(window.localStorage.getItem('user')).uid;
+  }
 
   ngOnInit() {
-    this.load();
-  }
-  private postReview() {
-    this.gReview.postGeneralReview(this.user).then((data) => this.getGeneralReview());
-  }
-
-  private getGeneralReview() {
-    this.gReview.getGeneralReview(this.link).subscribe((data) => (data));
-  }
-  private load() {
-    this.gReview.getGeneralReview(this.link).subscribe((data) => {
-      this.reviews = data;
-      console.log(this.reviews);
-    });
-  }
-
-  getInfo() {
-    this.auth.user.subscribe((user) => {
-      this.user.userName = user.displayName;
-      this.user.userPhoto = user.photoURL;
-      this.user.email = user.email;
-      this.user.userId = user.uid;
-      if (this.userComment) {
-        this.user.comment = this.userComment;
-      }
-      this.postReview();
-      console.log(this.user);
-    });
-  }
-
-  deleteReview(event, reviewItem) {
-    console.log(event);
-    // this.load();
+    this.reviewService.getAllUserReviews(this.idUser)
+      .subscribe((data) => {
+        this.reviews = data;
+      });
   }
 }

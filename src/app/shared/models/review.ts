@@ -3,6 +3,5 @@ export interface Review {
   userName: string;
   userPhoto: string;
   email: string;
-  videoId: string;
   comment: string;
 }
