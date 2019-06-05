@@ -1,26 +1,17 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Review} from '../models/review';
-import {AngularFirestore, AngularFirestoreCollection} from 'angularfire2/firestore';
+import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
 import {map} from 'rxjs/internal/operators';
 
 @Injectable()
 export class ReviewService {
   reviewCollection: AngularFirestoreCollection<Review>;
+  reviewDoc: AngularFirestoreDocument<Review>;
+  items: any;
   constructor(private db: AngularFirestore) {
-    this.reviewCollection = this.db.collection('reviews');
-  }
-  getReview(data: any): Observable<any[]> {
-    return this.db.collection('reviews', ref => ref.limit(5)).valueChanges();
-  }
-  getMoreReviews(data: any, limit: number): Observable<any[]> {
-    return this.db.collection('reviews', ref => ref.limit(limit)).valueChanges();
-  }
-  addReview(review: Review) {
-    return this.reviewCollection.add(review);
-  }
-  getAllUserReviews(userId: string): Observable<any[]> {
-    return this.db.collection('reviews', ref => ref.where('userId', '==', userId))
+    this.reviewCollection = this.db.collection<Review>('review');
+    this.items = this.db.collection('review', ref => ref)
       .snapshotChanges()
       .pipe(
         map(actions => {
@@ -31,5 +22,20 @@ export class ReviewService {
           });
         })
       );
+  }
+  getReview(): Observable<any[]> {
+    // return this.db.collection('review', ref => ref.limit(100)).valueChanges();
+    return this.items;
+  }
+  getMoreReviews(data: any, limit: number): Observable<any[]> {
+    return this.db.collection('review', ref => ref.limit(limit)).valueChanges();
+  }
+  addReview(review: Review) {
+    return this.reviewCollection.add(review);
+  }
+  removeReview(review: Review) {
+    this.reviewDoc = this.db.doc(`review/${review.id}`);
+    console.log(this.reviewDoc)
+    return this.reviewDoc.delete();
   }
 }

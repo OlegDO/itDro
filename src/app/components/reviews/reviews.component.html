@@ -10,11 +10,19 @@
 </div>
 <div class="container-fluid">
   <div class="container d-flex flex-column">
-    <!--make a form here-->
-    <div>
-      <textarea class="w-100 p-3 lead" id="generalComment" rows="2" placeholder="Ваш комментарий.." [(ngModel)]="userComment" [maxLength]="255" [minLength]="1"></textarea>
-    </div>
-    <button (click)="getInfo();" class="submit btn btn-outline-primary btn-lg my-3" style="border-radius: 45px">Отправить</button>
+
+    <!--<div>-->
+      <!--<textarea class="w-100 p-3 lead form-control " id="generalComment" rows="2" placeholder="Ваш комментарий.." [(ngModel)]="userComment" [maxLength]="255" [minLength]="1"></textarea>-->
+      <!--<button (click)="getInfo();" class="submit btn btn-outline-primary btn-lg my-3" style="border-radius: 45px">Отправить</button>-->
+    <!--</div>-->
+
+    <form (ngSubmit)="submitForm(form)" #form="ngForm">
+      <label class="d-flex flex-column"> <span class="comment lead text-center mb-3 text-white">Комментарии:</span>
+        <textarea ngModel class="form-control w-100 p-3" name="userComment" type="text" [maxLength]="255" required></textarea>
+      </label>
+      <button  [disabled]="form.invalid" class="submit btn btn-outline-primary btn-lg my-3 w-25" style="border-radius: 45px" type="submit">Отправить</button>
+    </form>
+
     <div class="comments">
     <ul class="list-group">
       <li class="list-group-item py-3 my-4"
@@ -25,7 +33,7 @@
           <h5 class="pt-2"><span>{{ review.userName }}</span></h5>
         </div>
         <div class="delete w-25">
-          <img (click)="deleteReview($event);" class="delete-icon" src="../../../assets/images/delete.png" alt="">
+          <img *ngIf="uid === review.userId" (click)="deleteReview($event, review);" class="delete-icon" src="../../../assets/images/delete.png" alt="">
         </div>
       </div>
         <hr>
