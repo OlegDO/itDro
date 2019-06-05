@@ -1,6 +1,9 @@
 .social:hover {
   transform: scale(1.3);
 }
+.mail:hover {
+  transform: none;
+}
 .social {
   background-color: #0066FF;
   border-radius: 30px;
