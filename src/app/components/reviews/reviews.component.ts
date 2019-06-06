@@ -48,16 +48,6 @@ export class ReviewsComponent implements OnInit {
       console.log(this.reviews);
     });
   }
-  // getInfo() {
-  //     this.auth.user.subscribe((user) => {
-  //       this.user.userName = user.displayName;
-  //       this.user.userPhoto = user.photoURL;
-  //       this.user.email = user.email;
-  //       this.user.userId = user.uid;
-  //       this.user.comment = this.userComment;
-  //     });
-  //   // this.postReview();
-  // }
   submitForm(form: NgForm) {
     const review: Review = {
       comment: form.value.userComment,

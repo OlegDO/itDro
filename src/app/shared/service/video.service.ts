@@ -1,25 +1,43 @@
 import { Injectable } from '@angular/core';
 import {AngularFirestore, AngularFirestoreCollection} from 'angularfire2/firestore';
+import {map} from 'rxjs/operators';
+import {Observable} from 'rxjs';
+import {AngularFirestoreDocument} from '@angular/fire/firestore';
+import {VideoReview} from '../models/videoReview';
 
 @Injectable({
   providedIn: 'root'
 })
 export class VideoService {
-  generalReviewCollection: AngularFirestoreCollection<any>;
-
+  videoReviewCollection: AngularFirestoreCollection<VideoReview>;
+  videoDoc: AngularFirestoreDocument<VideoReview>;
+  items: any;
   constructor(private db: AngularFirestore) {
-    this.generalReviewCollection = this.db.collection('videoReview');
+    this.videoReviewCollection = this.db.collection<VideoReview>('videoReview');
+    this.items = this.db.collection('videoReview', ref => ref)
+      .snapshotChanges()
+      .pipe(
+        map(actions => {
+          return actions.map(a => {
+            const data = a.payload.doc.data() as VideoReview;
+            const id = a.payload.doc.id;
+            return {id, ...data};
+          });
+        })
+      );
   }
-
-  postVideoReview(data: any) {
-    return this.generalReviewCollection.add(data);
+  getVideoReview(): Observable<any[]> {
+    return this.items;
   }
-
-  getVideoReview(data: any) {
-    return this.db.collection('generalReview', (ref) => ref).valueChanges();
+  getMoreVideoReviews(data: any, limit: number): Observable<any[]> {
+    return this.db.collection('videoReview', ref => ref.limit(limit)).valueChanges();
   }
-
-  // removeReview(data: any) {
-  //   return this.db.doc('generalReview').delete();
+  addVideoReview(videoReview: VideoReview) {
+    return this.videoReviewCollection.add(videoReview);
+  }
+  // removeReview(videoReview: VideoReview) {
+  //   this.videoDoc = this.db.doc(`videoReview/${videoReview.id}`);
+  //   console.log(this.videoDoc)
+  //   return this.videoDoc.delete();
   // }
 }

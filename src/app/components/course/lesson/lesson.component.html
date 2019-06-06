@@ -1,11 +1,11 @@
 <!--header-->
 <div class="bg-dark pt-md-5 pb-md-4 text-center w-100 mx-md-auto">
-  <h2 class="font-weight-normal text-center text-white bg-dark">Что такое JavaScript?</h2>
+  <h2  *ngFor="let lesson of lessons" class="font-weight-normal text-center text-white bg-dark"><span *ngIf="lesson.link === this.link">{{lesson.title}}</span></h2>
 </div>
 <!--video-->
-<div class="container video d-flex align-items-center align-content-center flex-column">
-  <video class="w-100 mt-md-5"
-         src="https://firebasestorage.googleapis.com/v0/b/itdro-6a5c5.appspot.com/o/lesson1V2.mp4?alt=media&token=39c2fb20-b52a-475e-af1d-19f1725e9876"
+<div *ngFor="let lesson of lessons" class="container video d-flex align-items-center align-content-center flex-column">
+  <video *ngIf="lesson.link === this.link" class="w-100 mt-md-5"
+         [src]="lesson.src"
          controls
   >Видеоурок</video>
 </div>
@@ -81,14 +81,14 @@
 <!--navigation-->
 <div class="container d-flex flex-column align-items-center py-3">
   <ul class="pagination">
-    <li class="page-item">
-      <a class="page-link" aria-label="Previous">
+    <li *ngFor="let lesson of lessons" class="page-item">
+      <a *ngIf="lesson.link === this.link" [routerLink]="['/course', lesson.previousPageLink]" class="page-link" aria-label="Previous">
         <span aria-hidden="true">&laquo;</span>
         <span class="sr-only">Предыдущий</span>
       </a>
     </li>
-    <li class="page-item">
-      <a class="page-link" routerLink="/course/lesson2" aria-label="Next">
+    <li *ngFor="let lesson of lessons" class="page-item">
+      <a *ngIf="lesson.link === this.link" [routerLink]="['/course', lesson.nextPageLink]" class="page-link" aria-label="Next">
         <span aria-hidden="true">&raquo;</span>
         <span class="sr-only">Следующий</span>
       </a>
@@ -98,13 +98,11 @@
 
 
 <!--comments-->
-<div class="container d-flex flex-column">
-  <!--make a form here-->
-  <div class="">
-    <textarea class="w-100 p-3 lead" name="" id="" rows="4" placeholder="Ваш комментарий.."></textarea>
-    <button class="submit btn btn-outline-primary btn-lg my-3" style="border-radius: 45px">Отправить</button>
-  </div>
-  <!--comments results-->
-  <div class="comments">
-  </div>
+<div class="container">
+<form (ngSubmit)="submitForm(form)" #form="ngForm">
+  <label class="d-flex flex-column"> <span class="comment lead text-center mb-3 text-white">Комментарии:</span>
+    <textarea ngModel class="form-control w-100 p-3" name="userComment" type="text" [maxlength]="255" required></textarea>
+  </label>
+  <button  [disabled]="form.invalid" class="submit btn btn-outline-primary btn-lg my-3 w-25" style="border-radius: 45px" type="submit">Отправить</button>
+</form>
 </div>
