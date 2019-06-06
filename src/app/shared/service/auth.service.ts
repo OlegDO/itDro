@@ -12,7 +12,7 @@ export class AuthService {
   isAuthenticated = false;
   // private _user: Subject<any> = new Subject<any>();
   // isUser = this._user.asObservable();
-  constructor(public afAuth: AngularFireAuth, private router: Router, private aRout: Router) {
+  constructor(public afAuth: AngularFireAuth, private router: Router) {
     this.user = afAuth.authState;
   }
 

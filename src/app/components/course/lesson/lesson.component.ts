@@ -18,53 +18,54 @@ import {ActivatedRoute, Params} from '@angular/router';
 export class LessonComponent implements OnInit {
   @Input() id = '';
   user: any = {};
-  reviews: Review[];
   userComment: any;
   uid = JSON.parse(window.localStorage.getItem('user')).uid;
   check: boolean;
   lessons: Lesson[] = LESSONS;
-  link = ':link';
+  link;
+  videoReviews: VideoReview[];
 
 
-  constructor(private auth: AuthService, private reviewService: ReviewService, private admin: AdminService, private route: ActivatedRoute) {
+  constructor(private auth: AuthService, private videoService: VideoService, private admin: AdminService, private route: ActivatedRoute) {
     this.check = admin.isAdmin;
   }
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
       this.link = params['link'];
-      console.log(this.link)
-    })
+    });
+    this.load();
   }
-  // private postReview(videoReview: VideoReview) {
-  //   this.reviewService.addReview(review).then((ref) => this.getReview());
-  // }
-  // private getReview() {
-  //   this.reviewService.getReview().subscribe((data) => (data));
-  // }
+  private postVideoReview(videoReview: VideoReview) {
+    this.videoService.addVideoReview(videoReview).then((ref) => this.getVideoReview());
+  }
+  private getVideoReview() {
+    this.videoService.getVideoReview().subscribe((data) => (data));
+  }
   // private deleteReview(event, videoReview: VideoReview) {
   //   if (this.uid === review.userId || this.check) {
-  //     return this.reviewService.removeReview(review);
+  //     return this.videoService.removeReview(review);
   //   }
   //   // return this.load();
   // }
-  // private load() {
-  //   this.videoReviewService.getReview().subscribe((data) => {
-  //     this.reviews = data;
-  //     console.log(this.reviews);
-  //   });
-  // }
-  // submitForm(form: NgForm) {
-  //   const videoReview: VideoReview = {
-  //     comment: form.value.userComment,
-  //     userId: JSON.parse(window.localStorage.getItem('user')).uid,
-  //     userName: JSON.parse(window.localStorage.getItem('user')).displayName,
-  //     userPhoto: JSON.parse(window.localStorage.getItem('user')).photoURL,
-  //     email: JSON.parse(window.localStorage.getItem('user')).email
-  //   };
-  //   if (form.valid === true) {
-  //     this.postReview(videoReview);
-  //   }
-  //   form.resetForm();
-  //   console.log(form);
-  // }
+  private load() {
+    this.videoService.getVideoReview().subscribe((data) => {
+      this.videoReviews = data;
+    });
+  }
+  submitForm(form: NgForm) {
+    const videoReview: VideoReview = {
+      comment: form.value.userComment,
+      userId: JSON.parse(window.localStorage.getItem('user')).uid,
+      userName: JSON.parse(window.localStorage.getItem('user')).displayName,
+      userPhoto: JSON.parse(window.localStorage.getItem('user')).photoURL,
+      email: JSON.parse(window.localStorage.getItem('user')).email,
+      videoId: this.link
+    };
+    if (form.valid === true) {
+      this.postVideoReview(videoReview);
+    }
+    console.log(videoReview)
+    form.resetForm();
+    console.log(form);
+  }
 }

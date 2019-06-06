@@ -24,7 +24,6 @@ export class ReviewService {
       );
   }
   getReview(): Observable<any[]> {
-    // return this.db.collection('review', ref => ref.limit(100)).valueChanges();
     return this.items;
   }
   getMoreReviews(data: any, limit: number): Observable<any[]> {

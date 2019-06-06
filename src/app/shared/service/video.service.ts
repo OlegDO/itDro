@@ -35,9 +35,8 @@ export class VideoService {
   addVideoReview(videoReview: VideoReview) {
     return this.videoReviewCollection.add(videoReview);
   }
-  // removeReview(videoReview: VideoReview) {
+  // removeVideoReview(videoReview: VideoReview) {
   //   this.videoDoc = this.db.doc(`videoReview/${videoReview.id}`);
-  //   console.log(this.videoDoc)
   //   return this.videoDoc.delete();
   // }
 }
