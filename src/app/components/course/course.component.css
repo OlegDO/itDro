@@ -1,1 +1,10 @@
-
+@media (max-width: 1199px) {
+  .card-deck {
+    display: flex;
+    flex-direction: column;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+}
