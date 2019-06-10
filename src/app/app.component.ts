@@ -15,6 +15,7 @@ export class AppComponent {
   public isWaiting = false;
   default = 'Аноним';
 
+
   constructor(private a: AngularFireAuth, public afAuth: AuthService) {
     this.a.authState
       .subscribe((authentic) => {

@@ -10,7 +10,24 @@
   >Видеоурок</video>
 </div>
 <!--tasks-->
-
+<div class="container tasks d-flex flex-column align-content-center align-items-center  pt-md-5 pb-md-4">
+  <div *ngFor="let task of tasks" id="accordion" class="w-100">
+    <div  *ngIf="task.lessonId === this.link" class="card">
+      <div *ngIf="task.lessonId === this.link" class="card-header" id="{{task.heading}}">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" [attr.data-target]='task.coll' aria-expanded="false">
+            <span>{{task.question}}</span>
+          </button>
+        </h5>
+      </div>
+      <div *ngIf="task.lessonId === this.link" id="{{task.collapse}}" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <span>{{task.task}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <!--<div class="container tasks d-flex flex-column align-content-center align-items-center  pt-md-5 pb-md-4">-->
   <!--<div id="accordion" class="w-100">-->
 
@@ -108,7 +125,7 @@
 
 
 <div class="comments">
-  <ul *ngFor="let videoReview of videoReviews;"class="list-group">
+  <ul *ngFor="let videoReview of videoReviews;" class="list-group">
     <li  class="list-group-item py-3 my-4"
         *ngIf="videoReview.videoId === this.link"
     ><div class="row">
@@ -116,9 +133,9 @@
         <img  [src]="videoReview.userPhoto" alt="" class="user-photo mr-3">
         <h5 class="pt-2"><span>{{ videoReview.userName }}</span></h5>
       </div>
-      <!--<div class="delete w-25">-->
-        <!--<img *ngIf="this.uid === review.userId || this.check" (click)="deleteReview($event, videoReview);" class="delete-icon" src="../../../assets/images/delete.png" alt="">-->
-      <!--</div>-->
+      <div class="delete w-25">
+        <img *ngIf="this.uid === videoReview.userId || this.check" (click)="deleteReview($event, videoReview);" class="delete-icon" src="../../../assets/images/delete.png" alt="">
+      </div>
     </div>
       <hr>
       <div class="mess">

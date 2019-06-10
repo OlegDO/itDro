@@ -49,12 +49,13 @@ export class ReviewsComponent implements OnInit {
     });
   }
   submitForm(form: NgForm) {
+
     const review: Review = {
       comment: form.value.userComment,
       userId: JSON.parse(window.localStorage.getItem('user')).uid,
       userName: JSON.parse(window.localStorage.getItem('user')).displayName,
       userPhoto: JSON.parse(window.localStorage.getItem('user')).photoURL,
-      email: JSON.parse(window.localStorage.getItem('user')).email
+      email: JSON.parse(window.localStorage.getItem('user')).email,
     };
     if (form.valid === true) {
       this.postReview(review);

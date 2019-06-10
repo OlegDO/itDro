@@ -7,8 +7,10 @@ import {AdminService} from '../../../shared/service/admin.service';
 import {NgForm} from '@angular/forms';
 import {VideoReview} from '../../../shared/models/videoReview';
 import {Lesson} from '../../../shared/models/lesson';
+import {Task} from '../../../shared/models/task';
 import { LESSONS} from '../../../shared/constants/lessons';
 import {ActivatedRoute, Params} from '@angular/router';
+import {TASKS} from '../../../shared/constants/tasks';
 
 @Component({
   selector: 'app-lesson',
@@ -24,6 +26,7 @@ export class LessonComponent implements OnInit {
   lessons: Lesson[] = LESSONS;
   link;
   videoReviews: VideoReview[];
+  tasks: Task[] = TASKS;
 
 
   constructor(private auth: AuthService, private videoService: VideoService, private admin: AdminService, private route: ActivatedRoute) {
@@ -32,8 +35,8 @@ export class LessonComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
       this.link = params['link'];
+      this.load();
     });
-    this.load();
   }
   private postVideoReview(videoReview: VideoReview) {
     this.videoService.addVideoReview(videoReview).then((ref) => this.getVideoReview());
@@ -41,12 +44,6 @@ export class LessonComponent implements OnInit {
   private getVideoReview() {
     this.videoService.getVideoReview().subscribe((data) => (data));
   }
-  // private deleteReview(event, videoReview: VideoReview) {
-  //   if (this.uid === review.userId || this.check) {
-  //     return this.videoService.removeReview(review);
-  //   }
-  //   // return this.load();
-  // }
   private load() {
     this.videoService.getVideoReview().subscribe((data) => {
       this.videoReviews = data;
@@ -67,5 +64,12 @@ export class LessonComponent implements OnInit {
     console.log(videoReview)
     form.resetForm();
     console.log(form);
+  }
+
+  deleteReview($event: MouseEvent, videoReview: VideoReview) {
+    if (this.uid === videoReview.userId || this.check) {
+          return this.videoService.removeVideoReview(videoReview);
+        }
+        return this.load();
   }
 }

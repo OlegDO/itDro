@@ -14,6 +14,8 @@ export class VideoService {
   items: any;
   constructor(private db: AngularFirestore) {
     this.videoReviewCollection = this.db.collection<VideoReview>('videoReview');
+  }
+  getVideoReview(): Observable<any[]> {
     this.items = this.db.collection('videoReview', ref => ref)
       .snapshotChanges()
       .pipe(
@@ -21,22 +23,26 @@ export class VideoService {
           return actions.map(a => {
             const data = a.payload.doc.data() as VideoReview;
             const id = a.payload.doc.id;
+            console.log(a)
             return {id, ...data};
           });
         })
       );
-  }
-  getVideoReview(): Observable<any[]> {
     return this.items;
   }
+  // getReviewByVideoId(videoId): Observable<any[]> {
+  //   return this.db.collection('videoReview', ref => ref.where('videoId', '==', videoId)).valueChanges();
+  // }
   getMoreVideoReviews(data: any, limit: number): Observable<any[]> {
     return this.db.collection('videoReview', ref => ref.limit(limit)).valueChanges();
   }
   addVideoReview(videoReview: VideoReview) {
     return this.videoReviewCollection.add(videoReview);
   }
-  // removeVideoReview(videoReview: VideoReview) {
-  //   this.videoDoc = this.db.doc(`videoReview/${videoReview.id}`);
-  //   return this.videoDoc.delete();
-  // }
+  removeVideoReview(videoReview: VideoReview) {
+    // @ts-ignore
+    this.videoDoc = this.db.doc(`videoReview/${videoReview.id}`);
+    console.log(videoReview.id)
+    return this.videoDoc.delete();
+  }
 }
