@@ -14,7 +14,7 @@ export const TASKS: Task[] = [
   { coll: '#collapseTwo', collapse: 'collapseTwo', heading: 'headingTwo', lessonId: 'lesson3', question: 'Расскажите о функционале функции alert()', task: 'alert выводит на экран окно с сообщением и приостанавливает выполнение скрипта, пока пользователь не нажмёт «ОК»'},
   // Lesson 4
   { coll: '#collapseOne', collapse: 'collapseOne', heading: 'headingOne', lessonId: 'lesson4', question: 'Где объявляется директива use strict?', task: 'В начале вашего скрипт-файла'},
-  { coll: '#collapseTwo', collapse: 'collapseTwo', heading: 'headingTwo', lessonId: 'lesson4', question: 'Почему use strict опасен для старого кода?', task: 'Некоторые библиотеки, которые написаны без "use strict", не всегда корректно работают, если вызывающий код содержит\n "use strict"'},
+  { coll: '#collapseTwo', collapse: 'collapseTwo', heading: 'headingTwo', lessonId: 'lesson4', question: 'Почему use strict опасен для старого кода?', task: 'Некоторые библиотеки, которые написаны без "use strict", не всегда корректно работают, если вызывающий код содержит\n"use strict"'},
   // Lesson 5
   { coll: '#collapseOne', collapse: 'collapseOne', heading: 'headingOne', lessonId: 'lesson5', question: 'Назовите типы данных в JavaScript', task: 'Number, String, Boolean, Null, Undefined И и Object'},
   { coll: '#collapseTwo', collapse: 'collapseTwo', heading: 'headingTwo', lessonId: 'lesson5', question: 'Выведите с помощью функции alert() переменную name, в которой будет содержаться ваше имя.', task: '<script>\nvar name=\'oleg\';\n alert(name);\n</script>'},
