@@ -30,9 +30,6 @@ export class VideoService {
       );
     return this.items;
   }
-  // getReviewByVideoId(videoId): Observable<any[]> {
-  //   return this.db.collection('videoReview', ref => ref.where('videoId', '==', videoId)).valueChanges();
-  // }
   getMoreVideoReviews(data: any, limit: number): Observable<any[]> {
     return this.db.collection('videoReview', ref => ref.limit(limit)).valueChanges();
   }

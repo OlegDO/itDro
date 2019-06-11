@@ -18,7 +18,7 @@
     <br>
   </div>
 
-  <!--first card deck section (4 elements)-->
+  <!--first card deck section-->
   <div class="container d-flex align-content-center">
     <div class="card-deck mr-md-5 ml-md-5 mb-md-0 mt-md-0 p-md-3">
 
@@ -37,7 +37,7 @@
       <!--card element 2-->
       <div class="card mb-4 shadow-sm">
         <div class="card-header text-center">
-          <h4 class="my-0 font-weight-normal">Основы языка</h4>
+          <h4 class="my-0 font-weight-normal">Основы языка (Блок 1)</h4>
         </div>
         <div class="card-body ">
           <ul class="list-group-item list-group-item-primary list-unstyled px-md-2 my-md-2">
@@ -49,21 +49,43 @@
       <!--card element 3-->
       <div class="card mb-4 shadow-sm">
         <div class="card-header text-center">
-          <h4 class="my-0 font-weight-normal">Структуры данных</h4>
+          <h4 class="my-0 font-weight-normal">Основы языка (Блок 2)</h4>
         </div>
-        <div class="card-body">
+        <div class="card-body ">
           <ul class="list-group-item list-group-item-primary list-unstyled px-md-2 my-md-2">
-            <li><a routerLink="/">13. Поговорим о методах и свойствах.</a></li>
-            <li><a routerLink="/">14. Строки.</a></li>
-            <li><a routerLink="/">15. Числа.</a></li>
-            <li><a routerLink="/">16. Объекты? Что это?.</a></li>
-            <li><a routerLink="/">17. Всё о массивах.</a></li>
-            <li><a routerLink="/">18. Особенности работы даты и времени.</a></li>
+            <li *ngFor="let lesson of lessons; let i = index"><div *ngIf="lesson.type === 'core2'"><a [routerLink]="['/course', lesson.link]">{{ i + 1 }} {{ lesson.title }}</a></div></li>
           </ul>
         </div>
       </div>
     </div>
   </div>
+  <div class="container d-flex justify-content-around">
+    <div class="card-deck mr-md-5 ml-md-5 mb-md-0 mt-md-0 p-md-3">
 
+      <!--card element 1-->
+      <div class="card mb-4 shadow-sm">
+        <div class="card-header text-center">
+          <h4 class="my-0 font-weight-normal">Структуры данных (Блок 1)</h4>
+        </div>
+        <div class="card-body">
+          <ul class="list-group-item list-unstyled list-group-item-primary px-md-2 my-md-2">
+            <li *ngFor="let lesson of lessons; let i = index"><div *ngIf="lesson.type === 'data-structure'"><a [routerLink]="['/course', lesson.link]">{{ i + 1 }} {{ lesson.title }}</a></div></li>
+          </ul>
+        </div>
+      </div>
+
+      <!--card element 2-->
+      <div class="card mb-4 shadow-sm">
+        <div class="card-header text-center">
+          <h4 class="my-0 font-weight-normal">Структуры данных (Блок 2)</h4>
+        </div>
+        <div class="card-body ">
+          <ul class="list-group-item list-group-item-primary list-unstyled px-md-2 my-md-2">
+            <li *ngFor="let lesson of lessons; let i = index"><div *ngIf="lesson.type === 'data-structure2'"><a [routerLink]="['/course', lesson.link]">{{ i + 1 }} {{ lesson.title }}</a></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 

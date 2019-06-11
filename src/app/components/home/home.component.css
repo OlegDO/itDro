@@ -37,3 +37,17 @@
 p .lead {
   text-align: justify;
 }
+@media (max-width: 1199px) {
+  .first-items {
+    display: flex;
+    flex-direction: column !important;
+  }
+  .second-items{
+    display: flex;
+    flex-direction: column !important;
+  }
+  .card-deck {
+    display: flex;
+    justify-content: center;
+  }
+}
