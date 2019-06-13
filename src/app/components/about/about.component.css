@@ -21,3 +21,10 @@ li {
 a {
   font-size: 1.3em;
 }
+@media (max-width: 768px) {
+  .about {
+    display: flex;
+    flex-direction: column !important;
+    align-items: center;
+  }
+}
