@@ -16,7 +16,7 @@
       <div *ngIf="task.lessonId === this.link" class="card-header" id="{{task.heading}}">
         <h5 class="mb-0">
           <button class="btn btn-link collapsed" data-toggle="collapse" [attr.data-target]='task.coll' aria-expanded="false">
-            <pre class="text-primary">{{task.question}}</pre>
+            <span class="text-primary">{{task.question}}</span>
           </button>
         </h5>
       </div>

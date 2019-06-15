@@ -51,3 +51,11 @@ p .lead {
     justify-content: center;
   }
 }
+@media (max-width: 578px) {
+  .card {
+    width: 90%;
+  }
+  .first-items, .second-items {
+    align-items: center
+  }
+}

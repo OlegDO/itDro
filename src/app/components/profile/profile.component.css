@@ -2,4 +2,28 @@ img {
   height: 300px;
   width: 300px;
   border-radius: 20px;
+  margin: 0 20px 0 0;
+}
+.container {
+  display: flex;
+  justify-content: center;
+}
+.user-info {
+  border-left: 1px solid dimgray;
+}
+@media (max-width: 767px) {
+  .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column !important;
+  }
+  .user-info {
+    text-align: center;
+    margin: 30px 0 0 0;
+    border-left: none;
+    border-top: 1px solid dimgray;
+  }
+  img {
+    margin: 0;
+  }
 }
