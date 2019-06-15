@@ -37,6 +37,7 @@
 p .lead {
   text-align: justify;
 }
+
 @media (max-width: 1199px) {
   .first-items {
     display: flex;
@@ -51,11 +52,48 @@ p .lead {
     justify-content: center;
   }
 }
+@media (max-width: 767px) {
+  .carousel-caption {
+    display: block !important;
+  }
+  .slider-text {
+    font-size: 10vw;
+  }
+}
 @media (max-width: 578px) {
   .card {
     width: 90%;
   }
+  .slider {
+    height: 50%;
+  }
+  h5 {
+    font-size: 7vw !important;
+  }
+  .slider-text {
+    font-size: 4vw !important;
+  }
   .first-items, .second-items {
-    align-items: center
+    align-items: center;
+  }
+}
+@media (max-width: 420px) {
+  .carousel-inner {
+    height: 632px !important;
+  }
+  .carousel-caption {
+    padding-bottom: 100px;
+  }
+  h4 {
+    font-size: 5.5vw;
+  }
+  .title-main {
+    font-size: 13vw;
+  }
+  .title-q {
+    font-size: 13vw;
+  }
+  .lead {
+    font-size: 5.5vw;
   }
 }
