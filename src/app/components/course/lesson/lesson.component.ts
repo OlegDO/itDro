@@ -27,6 +27,8 @@ export class LessonComponent implements OnInit {
   link;
   videoReviews: VideoReview[];
   tasks: Task[] = TASKS;
+  private userName: string;
+  private userMail: string;
 
 
   constructor(private auth: AuthService, private videoService: VideoService, private admin: AdminService, private route: ActivatedRoute) {
@@ -71,5 +73,9 @@ export class LessonComponent implements OnInit {
           return this.videoService.removeVideoReview(videoReview);
         }
         return this.load();
+  }
+  inspect($event, videoReview: Review) {
+    this.userName = videoReview.userName;
+    this.userMail = videoReview.email;
   }
 }

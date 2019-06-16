@@ -68,12 +68,12 @@
         <h5 class="pt-2"><span>{{ videoReview.userName }}</span></h5>
       </div>
       <div class="delete w-25">
-        <img  *ngIf="this.check" class="view-icon" src="assets/images/eye.png" alt="" data-toggle="modal" data-target=".bd-example-modal-lg">
+        <img  *ngIf="this.check" class="view-icon"(click)="inspect($event, videoReview)" src="assets/images/eye.png" alt="" data-toggle="modal" data-target=".bd-example-modal-lg">
         <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg">
             <div class="modal-content p-3">
-              <h3 class="lead text-center">Информация о пользователе - {{videoReview.userName}}</h3>
-              <h4 class="lead">email: {{videoReview.email}}</h4>
+              <h3 class="lead text-center">Информация о пользователе - {{userName}}</h3>
+              <h4 class="lead">email: {{userMail}}</h4>
             </div>
           </div>
         </div>

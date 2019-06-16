@@ -23,6 +23,8 @@ export class ReviewsComponent implements OnInit {
   userComment: any;
   uid = JSON.parse(window.localStorage.getItem('user')).uid;
   check: boolean;
+  private userName: string;
+  private userMail: string;
 
   constructor(private auth: AuthService, private reviewService: ReviewService, private admin: AdminService) {
     this.check = admin.isAdmin;
@@ -62,5 +64,10 @@ export class ReviewsComponent implements OnInit {
     }
     form.resetForm();
     console.log(form);
+  }
+
+  inspect($event, review: Review) {
+    this.userName = review.userName;
+    this.userMail = review.email;
   }
 }
