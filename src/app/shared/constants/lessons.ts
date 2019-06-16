@@ -41,7 +41,7 @@ export const LESSONS: Lesson[] = [
   // Lesson 19
   { title : 'Методы массивов', link: 'lesson19', type: 'data-structure2', nextPageLink: 'lesson20', previousPageLink: 'lesson18', src: 'https://firebasestorage.googleapis.com/v0/b/itdro-6a5c5.appspot.com/o/lesson19.mp4?alt=media&token=e45e4763-1de7-4575-946b-e9343210c6d7'},
   // Lesson 20
-  { title : 'Переберающие методы массивов', link: 'lesson20', type: 'data-structure2', nextPageLink: 'lesson21', previousPageLink: 'lesson19', src: 'https://firebasestorage.googleapis.com/v0/b/itdro-6a5c5.appspot.com/o/lesson20.mp4?alt=media&token=0958bf15-5cdb-4ad2-b4da-91e8eb3c3292'},
+  { title : 'Переберающие методы массивов', link: 'lesson20', type: 'data-structure2', nextPageLink: 'lesson21', previousPageLink: 'lesson19', src: 'https://firebasestorage.googleapis.com/v0/b/itdro-6a5c5.appspot.com/o/lesson20V2.mp4?alt=media&token=4b8322b9-daf8-4849-b810-8a3f7ef20b82'},
   // Lesson 20
   { title : 'Заключение', link: 'lesson21', type: 'data-structure2', nextPageLink: 'lesson21', previousPageLink: 'lesson20', src: 'https://firebasestorage.googleapis.com/v0/b/itdro-6a5c5.appspot.com/o/lesson21.mp4?alt=media&token=ea18ceee-ec94-4f54-9611-bbab775b50bd'},
 ];
