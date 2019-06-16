@@ -74,7 +74,7 @@ export class LessonComponent implements OnInit {
         }
         return this.load();
   }
-  inspect($event, videoReview: Review) {
+  inspect($event, videoReview: VideoReview) {
     this.userName = videoReview.userName;
     this.userMail = videoReview.email;
   }
