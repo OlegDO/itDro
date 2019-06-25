@@ -25,7 +25,7 @@ import {VideoService} from './shared/service/video.service';
 import { LessonComponent } from './components/course/lesson/lesson.component';
 import {ReviewService} from './shared/service/review.service';
 import {AdminService} from './shared/service/admin.service';
-import { NotAuthenticatedComponent } from './components/not-authenticated/not-authenticated.component';
+
 
 
 
@@ -43,8 +43,7 @@ import { NotAuthenticatedComponent } from './components/not-authenticated/not-au
     LessonFilterPipe,
     ProfileComponent,
     NotFoundComponent,
-    LessonComponent,
-    NotAuthenticatedComponent
+    LessonComponent
   ],
   imports: [
     BrowserModule,

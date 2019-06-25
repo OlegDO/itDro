@@ -9,7 +9,6 @@ import {ProfileComponent} from './components/profile/profile.component';
 import {NotFoundComponent} from './components/not-found/not-found.component';
 import {ProfileGuard} from './shared/service/profile.guard';
 import {LessonComponent} from './components/course/lesson/lesson.component';
-import {NotAuthenticatedComponent} from './components/not-authenticated/not-authenticated.component';
 
 
 

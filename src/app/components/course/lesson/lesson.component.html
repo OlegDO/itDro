@@ -47,7 +47,6 @@
   </ul>
 </div>
 
-
 <!--comments-->
 <div class="container">
 <form (ngSubmit)="submitForm(form)" #form="ngForm" *ngIf="this.auth.isAuthenticated">
@@ -56,7 +55,6 @@
   </label>
   <button  [disabled]="form.invalid" class="submit btn btn-outline-primary btn-lg my-3 w-25" style="border-radius: 45px" type="submit">Отправить</button>
 </form>
-
 
 <div class="comments">
   <ul *ngFor="let videoReview of videoReviews;" class="list-group">
