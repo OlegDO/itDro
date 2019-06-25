@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {AuthService} from './shared/service/auth.service';
+import {AdminService} from './shared/service/admin.service';
 
 
 @Component({
@@ -14,10 +15,10 @@ export class AppComponent {
   public isWaiting = false;
   default = 'Аноним';
 
-  constructor(private a: AngularFireAuth, public afAuth: AuthService) {
-    console.log(window.localStorage.getItem('user'));
-    window.localStorage.setItem('user', '{\"email\":\"defaultEmail\", \"uid\":\"defaultUid\"}');
-    console.log(window.localStorage.getItem('user'));
+  constructor(private a: AngularFireAuth, public afAuth: AuthService, private admin: AdminService) {
+    if (window.localStorage.getItem('user') === null) {
+      window.localStorage.setItem('user', '{\"email\":\"defaultEmail\", \"uid\":\"defaultUid\"}');
+    }
     this.a.authState
       .subscribe((authentic) => {
         if (authentic != null) {
@@ -41,6 +42,7 @@ export class AppComponent {
   logOut() {
     this.afAuth.logout();
     this.afAuth.isAuthenticated = false;
+    window.localStorage.setItem('user', '{\"email\":\"defaultEmail\", \"uid\":\"defaultUid\"}');
   }
 
 }

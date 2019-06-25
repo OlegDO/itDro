@@ -24,7 +24,17 @@ export class ReviewService {
       );
   }
   getReview(): Observable<any[]> {
-    return this.items;
+    return this.db.collection('review', ref => ref)
+      .snapshotChanges()
+      .pipe(
+        map(actions => {
+          return actions.map(a => {
+            const data = a.payload.doc.data() as Review;
+            const id = a.payload.doc.id;
+            return {id, ...data};
+          });
+        })
+      );
   }
   getMoreReviews(data: any, limit: number): Observable<any[]> {
     return this.db.collection('review', ref => ref.limit(limit)).valueChanges();

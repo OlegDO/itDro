@@ -1,6 +1,5 @@
-<app-not-authenticated *ngIf="!this.auth.isAuthenticated"></app-not-authenticated>
-<div *ngIf="this.auth.isAuthenticated">
-<div class="bg-dark pt-md-5 pb-md-4 text-center w-100 mx-md-auto">
+<div>
+<div class="bg-dark py-3 text-center w-100 mx-md-auto">
   <h2 class="font-weight-normal text-center text-white bg-dark">Отзывы</h2>
   <img src="assets/images/image-primary.svg" alt="" class="comment-pic">
 </div>
@@ -13,7 +12,7 @@
 <div class="container-fluid">
   <div class="container d-flex flex-column">
 
-    <form (ngSubmit)="submitForm(form)" #form="ngForm">
+    <form (ngSubmit)="submitForm(form)" #form="ngForm" *ngIf="this.auth.isAuthenticated">
       <label class="d-flex flex-column"> <span class="comment lead text-center mb-3 text-white">Комментарии:</span>
         <textarea ngModel class="form-control w-100 p-3" name="userComment" type="text" [maxLength]="255" required></textarea>
       </label>

@@ -1,6 +1,5 @@
-<app-not-authenticated *ngIf="!this.auth.isAuthenticated"></app-not-authenticated>
 <!--header-->
-<div class="bg-dark pt-md-5 pb-md-4 text-center w-100 mx-md-auto" *ngIf="this.auth.isAuthenticated">
+<div class="bg-dark pt-md-5 pb-md-4 text-center w-100 mx-md-auto">
   <h2  *ngFor="let lesson of lessons" class="font-weight-normal text-center text-white bg-dark"><span *ngIf="lesson.link === this.link">{{lesson.title}}</span></h2>
 </div>
 <!--video-->
@@ -51,7 +50,7 @@
 
 <!--comments-->
 <div class="container">
-<form (ngSubmit)="submitForm(form)" #form="ngForm">
+<form (ngSubmit)="submitForm(form)" #form="ngForm" *ngIf="this.auth.isAuthenticated">
   <label class="d-flex flex-column"> <span class="comment lead text-center mb-3 text-white">Комментарии:</span>
     <textarea ngModel class="form-control w-100 p-3" name="userComment" type="text" [maxlength]="255" required></textarea>
   </label>

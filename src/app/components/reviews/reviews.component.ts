@@ -28,10 +28,10 @@ export class ReviewsComponent implements OnInit {
   private userMail: string;
 
   constructor(private auth: AuthService, private reviewService: ReviewService, private admin: AdminService) {
-    this.check = admin.isAdmin;
-    this.load();
+    this.check = this.admin.check();
   }
   ngOnInit() {
+    this.load();
   }
   private postReview(review: Review) {
     this.reviewService.addReview(review).then((ref) => this.getReview());
@@ -48,7 +48,6 @@ export class ReviewsComponent implements OnInit {
   private load() {
     this.reviewService.getReview().subscribe((data) => {
       this.reviews = data;
-      console.log(this.reviews);
     });
   }
   submitForm(form: NgForm) {
