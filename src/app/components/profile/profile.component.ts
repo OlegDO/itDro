@@ -4,6 +4,7 @@ import {AngularFireAuth} from 'angularfire2/auth';
 import {log} from 'util';
 import {Observable} from 'rxjs';
 import * as firebase from 'firebase/app';
+import {AdminService} from '../../shared/service/admin.service';
 
 
 
@@ -15,7 +16,7 @@ import * as firebase from 'firebase/app';
 export class ProfileComponent {
   user: any;
   user$: Observable<firebase.User>;
-  constructor(private afAuth: AuthService) {
+  constructor(private afAuth: AuthService, private admin: AdminService) {
     this.user$ = this.afAuth.user;
     this.user$.subscribe((u) => {
       this.user = u;
