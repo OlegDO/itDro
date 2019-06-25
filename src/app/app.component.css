@@ -27,6 +27,9 @@
 .route{
   font-size: 20px;
 }
+.dropdown-toggle {
+  width: 239px;
+}
 @media (max-width: 768px) {
   .dropdown {
     text-align: center;
