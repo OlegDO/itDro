@@ -1,6 +1,5 @@
-<app-not-authenticated *ngIf="!this.auth.isAuthenticated"></app-not-authenticated>
 <div *ngIf="this.auth.isAuthenticated">
-<div class="bg-dark pt-md-5 pb-md-4 text-center w-100 mx-md-auto">
+<div class="bg-dark py-3 text-center w-100 mx-md-auto">
   <h2 class="font-weight-normal text-center text-white bg-dark">Отзывы</h2>
   <img src="assets/images/image-primary.svg" alt="" class="comment-pic">
 </div>
@@ -52,3 +51,4 @@
   </div>
 </div>
 </div>
+<app-not-authenticated *ngIf="!this.auth.isAuthenticated"></app-not-authenticated>

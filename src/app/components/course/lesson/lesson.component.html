@@ -1,4 +1,5 @@
 <app-not-authenticated *ngIf="!this.auth.isAuthenticated"></app-not-authenticated>
+<div *ngIf="this.auth.isAuthenticated">
 <!--header-->
 <div class="bg-dark pt-md-5 pb-md-4 text-center w-100 mx-md-auto" *ngIf="this.auth.isAuthenticated">
   <h2  *ngFor="let lesson of lessons" class="font-weight-normal text-center text-white bg-dark"><span *ngIf="lesson.link === this.link">{{lesson.title}}</span></h2>
@@ -87,5 +88,6 @@
       </div>
     </li>
   </ul>
+</div>
 </div>
 </div>

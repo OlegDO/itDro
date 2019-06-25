@@ -5,7 +5,7 @@ import {Injectable} from '@angular/core';
 
 @Injectable()
 export class AdminService {
-  private currentUser: any;
+  currentUser: any;
   isAdmin: boolean;
   constructor() {
     this.currentUser = JSON.parse(localStorage.getItem('user'));
