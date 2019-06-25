@@ -27,7 +27,19 @@ a {
     flex-direction: column !important;
     align-items: center;
   }
+  .contacts {
+    width: 100%;
+    justify-content: space-around;
+  }
   .about-title {
     padding: 20px 0;
+  }
+}
+@media (max-width: 420px) {
+  .contacts {
+   flex-direction: column !important;
+  }
+  .social {
+    margin: 5px 0 !important;
   }
 }
