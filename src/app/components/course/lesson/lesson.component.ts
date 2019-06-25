@@ -32,7 +32,7 @@ export class LessonComponent implements OnInit {
 
 
   constructor(private auth: AuthService, private videoService: VideoService, private admin: AdminService, private route: ActivatedRoute) {
-    this.check = admin.isAdmin;
+    this.check = this.admin.check();
   }
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {

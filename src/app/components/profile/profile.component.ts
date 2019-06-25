@@ -20,7 +20,6 @@ export class ProfileComponent {
     this.user$ = this.afAuth.user;
     this.user$.subscribe((u) => {
       this.user = u;
-      console.log(u);
     });
   }
 }

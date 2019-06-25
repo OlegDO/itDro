@@ -23,7 +23,6 @@ export class VideoService {
           return actions.map(a => {
             const data = a.payload.doc.data() as VideoReview;
             const id = a.payload.doc.id;
-            console.log(a)
             return {id, ...data};
           });
         })
@@ -39,7 +38,6 @@ export class VideoService {
   removeVideoReview(videoReview: VideoReview) {
     // @ts-ignore
     this.videoDoc = this.db.doc(`videoReview/${videoReview.id}`);
-    console.log(videoReview.id)
     return this.videoDoc.delete();
   }
 }

@@ -1,6 +1,8 @@
 <!--header-->
-<div class="bg-dark pt-md-5 pb-md-4 text-center w-100 mx-md-auto">
-  <h2  *ngFor="let lesson of lessons" class="font-weight-normal text-center text-white bg-dark"><span *ngIf="lesson.link === this.link">{{lesson.title}}</span></h2>
+<div class="bg-dark py-3 mb-4 text-center w-100 mx-md-auto">
+  <h2  *ngFor="let lesson of lessons" class="font-weight-normal text-center text-white bg-dark">
+    <span *ngIf="lesson.link === this.link">{{lesson.title}}</span>
+  </h2>
 </div>
 <!--video-->
 <div *ngFor="let lesson of lessons" class="container video d-flex align-items-center align-content-center flex-column">
@@ -10,7 +12,7 @@
   >Видеоурок</video>
 </div>
 <!--tasks-->
-<div class="container tasks d-flex flex-column align-content-center align-items-center  pt-md-5 pb-md-4">
+<div class="container tasks d-flex flex-column align-content-center align-items-center  pt-5 pb-md-4">
   <div *ngFor="let task of tasks" id="accordion" class="w-100">
     <div  *ngIf="task.lessonId === this.link" class="card">
       <div *ngIf="task.lessonId === this.link" class="card-header" id="{{task.heading}}">
