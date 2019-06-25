@@ -8,6 +8,7 @@ import {NgClass} from '@angular/common';
 import {Admin} from '../../shared/models/admin';
 import {ADMINS} from '../../shared/constants/admins';
 import {AdminService} from '../../shared/service/admin.service';
+import {AngularFireAuth} from '@angular/fire/auth';
 
 
 
@@ -30,6 +31,7 @@ export class ReviewsComponent implements OnInit {
     this.check = admin.isAdmin;
   }
   ngOnInit() {
+    console.log(this.auth.isAuthenticated)
     this.load();
   }
   private postReview(review: Review) {

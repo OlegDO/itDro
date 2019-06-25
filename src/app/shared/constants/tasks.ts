@@ -11,13 +11,13 @@ export const TASKS: Task[] = [
   { coll: '#collapseTwo', collapse: 'collapseTwo', heading: 'headingTwo', lessonId: 'lesson2', question: 'В чем преимущество легких редакторов?', task: 'В легких редакторах слегче отредактировать 1 файл, чем загружать в IDE целый проект. То есть вы экономите время'},
   // Lesson 3
   { coll: '#collapseOne', collapse: 'collapseOne', heading: 'headingOne', lessonId: 'lesson3', question: 'Как подключить скрипт к шаблону?', task: 'Необходимо использовать тег - ' + '<script src="ПУТЬ"></script>' },
-  { coll: '#collapseTwo', collapse: 'collapseTwo', heading: 'headingTwo', lessonId: 'lesson3', question: 'Расскажите о функционале функции alert()', task: 'alert выводит на экран окно с сообщением и приостанавливает выполнение скрипта, пока пользователь не нажмёт «ОК»'},
+  { coll: '#collapseTwo', collapse: 'collapseTwo', heading: 'headingTwo', lessonId: 'lesson3', question: 'Расскажите о функционале функции alert()', task: 'Функция выводит на экран окно с сообщением и приостанавливает выполнение скрипта, пока пользователь не нажмёт «ОК»'},
   // Lesson 4
   { coll: '#collapseOne', collapse: 'collapseOne', heading: 'headingOne', lessonId: 'lesson4', question: 'Где объявляется директива use strict?', task: 'В начале вашего скрипт-файла'},
   { coll: '#collapseTwo', collapse: 'collapseTwo', heading: 'headingTwo', lessonId: 'lesson4', question: 'Почему use strict опасен для старого кода?', task: 'Некоторые библиотеки, которые написаны без "use strict", не всегда корректно работают, если вызывающий код содержит\n"use strict"'},
   // Lesson 5
   { coll: '#collapseOne', collapse: 'collapseOne', heading: 'headingOne', lessonId: 'lesson5', question: 'Назовите типы данных в JavaScript', task: 'Number, String, Boolean, Null, Undefined И и Object'},
-  { coll: '#collapseTwo', collapse: 'collapseTwo', heading: 'headingTwo', lessonId: 'lesson5', question: 'Выведите с помощью функции alert() переменную name, в которой будет содержаться ваше имя.', task: '<script>\nvar name=\'oleg\';\n alert(name);\n</script>'},
+  { coll: '#collapseTwo', collapse: 'collapseTwo', heading: 'headingTwo', lessonId: 'lesson5', question: 'Выведите с помощью функции alert() переменную name, в которой будет содержаться ваше имя.', task: '<script>\n var name=\'oleg\';\n alert(name);\n</script>'},
   // Lesson 6
   { coll: '#collapseOne', collapse: 'collapseOne', heading: 'headingOne', lessonId: 'lesson6', question: 'Назовите операторы сравнения', task: ' <, >, <=, >=,  !=, ==,  ===, !=='},
   { coll: '#collapseTwo', collapse: 'collapseTwo', heading: 'headingTwo', lessonId: 'lesson6', question: 'Что выведет выражение 0 == false и 0 === false. Поясните', task: 'В первом случае, выражение вернет - true, тк при при не строгом сравнеии происходит привведение типов и false станет 0.\nВо втором случае, при строгом сравнеии, учавствуют 2 занчения разных типов: boolean и number, поэтому данное\nвыражение вернет - false'},
@@ -82,8 +82,8 @@ export const TASKS: Task[] = [
       '    break;\n' +
       '}'},
   // Lesson 11
-  { coll: '#collapseOne', collapse: 'collapseOne', heading: 'headingOne', lessonId: 'lesson11', question: 'Объявите функцию, которая выводит в alert() ваше имя, имя вы передается непосредственно в параметр функции, при вызове', task: 'function getName(name) { \nalert(name) \n};\n getName(\'oleg\');'},
-  { coll: '#collapseTwo', collapse: 'collapseTwo', heading: 'headingTwo', lessonId: 'lesson11', question: 'Объявите функции, которая является мультипликатором 2 значений. Результат данной функции запишите в переменную и \nвыведите ее в alert()', task: 'function mul(a, b) { \nreturn a*b; \n}; \nconsole.log(x = mul(5,4))'},
+  { coll: '#collapseOne', collapse: 'collapseOne', heading: 'headingOne', lessonId: 'lesson11', question: 'Объявите функцию, которая выводит в alert() ваше имя, имя вы передается непосредственно в параметр функции, при вызове', task: 'function getName(name) { \n alert(name) \n};\ngetName(\'oleg\');'},
+  { coll: '#collapseTwo', collapse: 'collapseTwo', heading: 'headingTwo', lessonId: 'lesson11', question: 'Объявите функции, которая является мультипликатором 2 значений. Результат данной функции запишите в переменную и \nвыведите ее в alert()', task: 'function mul(a, b) { \n return a*b; \n}; \n console.log(x = mul(5,4))'},
   // Lesson 12
   { coll: '#collapseOne', collapse: 'collapseOne', heading: 'headingOne', lessonId: 'lesson12', question: 'Как отличить метод от свойства?', task: 'Метод принимает аргументы (параметры), поэтому пишется с (), свойство же работает и пишется противоположно методу'},
   { coll: '#collapseTwo', collapse: 'collapseTwo', heading: 'headingTwo', lessonId: 'lesson12', question: 'Что делает свойство length?', task: 'Возвращает длину строки, массива'},
