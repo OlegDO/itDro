@@ -22,10 +22,22 @@
   border-left: 2px solid gray;
 }
 .dropdown-menu {
-  width: 170px;
+  width: 239px;
 }
 .route{
   font-size: 20px;
+}
+@media (max-width: 768px) {
+  .dropdown {
+    text-align: center;
+    margin-top: 10px;
+    width: 270px;
+    padding: 0;
+    border-left: none;
+  }
+  .show {
+    margin-bottom: 80px;
+  }
 }
 @media (max-width: 390px) {
   .links a{
