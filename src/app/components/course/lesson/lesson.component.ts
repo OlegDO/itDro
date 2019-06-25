@@ -31,7 +31,7 @@ export class LessonComponent implements OnInit {
   private userMail: string;
 
 
-  constructor(private auth: AuthService, private videoService: VideoService, private admin: AdminService, private route: ActivatedRoute) {
+  constructor(public auth: AuthService, private videoService: VideoService, private admin: AdminService, private route: ActivatedRoute) {
     this.check = this.admin.check();
   }
   ngOnInit() {

@@ -27,7 +27,7 @@ export class ReviewsComponent implements OnInit {
   private userName: string;
   private userMail: string;
 
-  constructor(private auth: AuthService, private reviewService: ReviewService, private admin: AdminService) {
+  constructor(public auth: AuthService, private reviewService: ReviewService, private admin: AdminService) {
     this.check = this.admin.check();
   }
   ngOnInit() {
