@@ -10,13 +10,14 @@ import {AuthService} from './shared/service/auth.service';
 })
 
 export class AppComponent {
-
   user: any;
   public isWaiting = false;
   default = 'Аноним';
 
-
   constructor(private a: AngularFireAuth, public afAuth: AuthService) {
+    console.log(window.localStorage.getItem('user'));
+    window.localStorage.setItem('user', '{\"email\":\"defaultEmail\", \"uid\":\"defaultUid\"}');
+    console.log(window.localStorage.getItem('user'));
     this.a.authState
       .subscribe((authentic) => {
         if (authentic != null) {
